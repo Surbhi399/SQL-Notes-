@@ -1,0 +1,81 @@
+NOTES 1
+========
+SQL : Structured Query Language.
+SQL is a standard language for storing, manipulating and retrieving data in 
+databases.
+It is the backbone of most database
+
+
+Data: Facts and figures.
+Example: 
+Sachin tendulkar
+Dravid
+1991no
+Bengaluru
+
+
+Database : Collection of facts and figures
+
+Example:
+Name     ID   Subject   Status
+Girish   101  Science   Pass
+Anupama  102  Commerce  Fail
+Dilip    103  Science   Pass
+
+
+DBMS :
+Database management system is software that is used to manage the database.
+For example: MySQL, Oracle, etc are a very popular commercial database which is 
+used in different applications.
+
+
+RDBMS
+RDBMS stands for Relational Database Management System.
+RDBMS is the basis for SQL, and for all modern database systems such as MS SQL Server, 
+IBM DB2, Oracle, MySQL, and Microsoft Access.
+
+
+Types of databases
+==================
+RDBMS-MySQL,Oracle
+----------------------
+RDBMS stands for Relational Database Management System.
+1.RDBMS is the basis for SQL, and for all modern database systems such as MS SQL Server, 
+IBM DB2, Oracle, MySQL, and Microsoft Access.
+RDBMS (Relational Database Management System) is a type of database management system that stores data in a tabular form with a predefined schema.
+2.RDBMS databases are best suited for applications that require complex queries and transactions.
+3.It follows ACID property
+Ex: Oracle
+
+
+
+
+
+NON-RDBMS-MongoDB,Cassandra
+-----------------------------
+1.Non-RDBMS, or NoSQL databases, use a flexible schema and store data in a non-tabular format. 
+2.NoSQL databases are better suited for applications with large amounts of unstructured data.
+3.Follows CAP Property
+Ex: MongoDB
+
+
+
+======================================================================================
+
+Note 1: 
+
+SELECT statement or clause:
+----------------------------
+
+ SELECT clause determines the columns to be retrieved from the table.
+ 
+
+
+
+
+
+
+
+
+
+
