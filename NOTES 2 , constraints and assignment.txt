@@ -1,0 +1,135 @@
+
+
+INSERT INTO Statement
+The SQL INSERT INTO Statement is used to add new rows of data to a table in the 
+database.
+
+It is possible to write the INSERT INTO statement as shown 
+below
+
+a.If you are adding values for all the columns of the table, you do not need to 
+specify the column names in the SQL query. However, make sure the order of the 
+values is in the same order as the columns in the table. 
+Here, the INSERT INTO syntax would be as follows:
+
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...);
+
+
+Assignment
+===========
+Create table with the name of your choice and then add 
+columns which must consists 6 records
+for example: 
+FirstName  LastName  Age   salary
+---------||--------||----||------
+Girish     Kumar     30   66000
+Hema       kumari    26   45000
+
+
+
+Constraints
+-----------
+
+Constraints are the rules enforced on the data columns of a table. These are used to limit the type of data that can go into a
+table. This ensures the accuracy and reliability of the data in the database.
+Constraints could be either on a column level or a table level. The column level constraints are applied only to one column,
+whereas the table level constraints are applied to the whole table.
+The constraints in SQL are
+==========================
+
+1) NOT NULL : This constraint can be used on the data in a table , whenever the 
+column should not be left empty.
+
+1) NOT NULL:
+Employee
+Name |  Id |   salary | department_Id 
+CREATE TABLE Employee
+(
+ Name varchar2(20) NOT NULL,
+
+);
+
+
+2) UNIQUE :  This constraint can be applied on the column whenever the values 
+to be stored without any duplicates.
+
+2)UNIQUE
+CREATE TABLE Employee
+(
+ Name varchar2(20) NOT NULL,
+ Id int UNIQUE AND NOT NULL
+);
+
+3) PRIMARY KEY:This constraint is used in a table to indicate the value is unique 
+and not null. And also will be using for referencing.
+CREATE TABLE Employee
+(
+ Name varchar2(20) NOT NULL,
+ Id int PRIMARY KEY
+);
+
+
+4) FORIEGN KEY: THIS CONSTRAINT is used in a table to indicate the value is referred
+ with PRIMARY KEY.
+
+5) CHECK : It is used to check or validate the values of a column to meet a 
+particular condition.
+
+6) DEFAULT : It is used to specify a default values for the column when no 
+value is specified by the user.
+
+
+Assignment 2:
+===================
+
+execute the queries below and observe the output 
+i) if it is success then write the success msg below the insert statement.
+ii) if it is error then write the error msg and write the note on why error msg as occured.
+
+EXAMPLE:
+CREATE TABLE Atom
+(
+   ID int PRIMARY KEY,
+   name varchar2(20) NOT NULL,
+   age int CHECK(age>=18),
+   salary int,
+   isMarried varchar2(4) DEFAULT 'NO'
+);
+ note: table is created successfully.
+
+
+
+
+insert into Atom values(1,'Roopa',22,30000,'Yes');
+SUCCESSFULLY RUN
+insert into Atom values(2,'Naveen',23,34566,'');
+SUCCESSFULLY RUN
+insert into Atom values(3,'Suman',18,2344,'Yes');
+SUCCESSFULLY RUN
+insert into Atom values(4,'Roopa',22.777,30000,'Yes');
+SUCCESSFULLY RUN
+insert into Atom values(5,Arthi,23,34566,'');
+NOTE: column not allowed here(Becoz arthi is not b/w single quotes)
+insert into Atom values(5,'Arthi',23,34566,'');
+SUCCESSFULLY RUN
+insert into Atom values(6,'Suman',18,7654,'Yes');
+SUCCESSFULLY RUN
+insert into Atom values(6,'Suman',18,'Yes');
+
+NOTE : not enough values(all values are not giving)
+
+insert into Atom values(7,'Shankar',24,40000,'');
+insert into Atom values(8,'Amrutha',24,40000,' ');
+
+select * from atom;
+drop table atom;
+
+
+
+
+
+
+
+
+
