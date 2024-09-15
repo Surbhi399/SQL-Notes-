@@ -1,0 +1,99 @@
+--Arithmetic Operators
+==========================
+
++ , - , * ,/
+=========================
+
+NOTE:Using these operators with Select statement any alteration made on data will not 
+reflect the actual TABLE.
+
+ASSIGNMENT 
+=============
+1. Waq to display first_name and salary by hiking salary by 15%.(0.15)
+
+==>> select first_name, (salary+(salary*0.15)) from Employees;
+
+2. WAQ to display the last_name and the salary by incrementing salary by 1000.
+
+==>> select last_name,(salary+1000) from Employees;
+
+3.WAQ to display the first_name and salary by reducing the salary by 2000 rs for every employee In the company.
+
+==>> select first_name,(salary-2000) from Employees;
+
+4.WAQ to display the first_name and annual salary from all the employees.
+
+==>> select first_name , (salary*12) from Employees;
+
+5.WAQ to display the commission and halfyearly salary for all the employees.
+
+==>> select  commission , (salary*6) from  Employees;
+
+6.Waq to display first_name and salary by hiking salary by 20%.(0.20)
+
+==>> select first_name, (salary*0.20) from  Employees;
+
+7.Waq to display first_name and salary by hiking salary by 10%.(0.10)
+
+==>> select  first_name , (salary*0.10)   from  Employees;
+
+8.Waq to display first_name and salary by hiking salary by 25%.(0.25)
+
+==>> select  first_name , (salary*0.25)   from  Employees;
+
+
+9.WAQ TO DISPLAY annual salary and salary with an inc of 50%
+
+==>> select  (salary*12) , (salary+ (salary*0.50)) from  Employees;
+
+10.waq to disp salary, annaul salary and one time bonus of 1000 	
+
+==>> select salary, (salary *12), salary+1000 from Employees;
+
+11.waq to dispaly first_name and commision pct by inc by 10
+
+==>> select first_name ,commision pct +10 from Employees;
+
+12.display the employee name,salary,and also salary with increment of    200.
+
+==>> select employee name,salary, (salary+200) from  Employees;
+
+13.waq to dispaly daily wages(per day salary) of all the employees
+
+==>> select  (salary / 30)  from Employees;
+
+14.WAQ TO DISPLAY THE FULL NAME OF ALL THE EMPLOYEES DEDUCTING THEIR SALARY BY 5%.
+
+==>> select first_name , last_name,( salary -(salary*0.05)) from Employees;
+
+15.WAQ TO DISPALY FIRST NAME AND SALARY BY INCREMENTING SALARY BY 5000 AND CALULATE THEIR ANNUAL SALARY
+
+==>>  select first_name , (salary + 5000) ,salary *12 from Employees;
+
+*******class queries which done in class teaching*******
+==============
+1) WAQ to print FIRST_NAME,salary must be incremented by 2000 for every employee.
+
+SELECT FIRST_NAME,SALARY+2000
+FROM Employees
+
+SELECT *
+FROM Employees
+
+2) WAQ to display First_name, annual salary
+SELECT First_name,salary*12
+FROM Employees
+
+
+
+3) WAQ to display First_name, half year salary
+SELECT First_name,salary*6
+FROM Employees
+
+SELECT First_name,(salary*12)/2
+FROM Employees
+
+
+4) WAQ to display last_name, salary by hiking 15%.
+SELECT last_name,(0.15*salary)+salary
+FROM Employees
