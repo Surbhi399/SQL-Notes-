@@ -1,0 +1,169 @@
+ASSIGNMENT 4
+============
+WAQ to display
+
+1.HI SACHIN GOOD AFTERNOON
+  HI VINOD GOOD AFTERNOON
+
+==>> select  'Hi ' ||  fname || ' GOOD AFTERNOON ' from Employees ;
+
+
+2.SACHIN JOINED THE COMPANY IN 10-Mar-12 IS WORKING IN dept number 90
+  VINOD JOINED THE COMPANY IN 10-May-12 IS WORKING IN dept number 90
+  
+==>> select fname || ' JOINED THE COMPANY IN  ' || hire_date || 'IS WORKING IN dept number' || dept_id as " Info of Employees "   from Employees ;
+
+3.Tendulkar:1 month salary=24000
+  Kumar:1 month salary=17000
+  
+
+==>> select last_name || ' : ' || '1 month salary= ' || salary ;
+
+4.Print below columns seperated by comma
+  FIRST_NAME	LAST_NAME	EMAIL	PHONE_NUMBER	HIRE_DATE	JOB_ID	SALARY
+           
+ EXAMPLE:Sachin,Tendulkar,sac@gmail.com,9856855,10-Mar-12,AD_PRES,24000
+
+==> select  FIRST_NAME	 || ',' || LAST_NAME	 || ',' || EMAIL || ',' || 	PHONE_NUMBER || ',' || 	HIRE_DATE || ',' || 	JOB_ID || ',' || 	SALARY as "Details" from Employees;
+
+5.WAQ to concatenate the data ‘Rahul’ and ‘Dravid’.
+NOTE : THIS IS THE DATA  NOT FOUND IN TABLE THEN HOW TO WRITE A QUERY 
+       WILL UNDERSTAND ABOUT THIS IN CLASS.
+
+==>> 
+
+6.  WAQ to display the rate_of_slab whose from_unit is 2001 and to_unit is 4500
+
+==> select rate_of_slab where from_unit = 2001 and to_unit = 4500 from Electricity_ detail ;
+
+7. Waq to display all the details of the table electricity_reading whose total_units perday is between
+500 and 1000
+(Write both RELATIONAL OPERATOR and BETWEEN AND OPERATOR).
+
+==>>  select * from  electricity_reading  where (total_units/ 30)  between 500 and 1000;
+==>>select * from  electricity_reading  where ( (total_units/ 30)>=500) and ( (total_units/ 30)<=1000);
+
+8.WAQ to display the last_name,hire_date,job_id of all the employees
+whose salary is greater than equal to 24000
+
+==>> select  last_name,hire_date,job_id from Employees where ( salary >= 24000) ;
+
+
+
+
+========================================================
+CLASS NOTES
+
+Concatenation operator
+----------------------
+|| operator is used to combine column names with any string or values.
+
+
+What is an Alias in SQL?
+An alias is a feature of SQL that is supported by most, if not all, RDBMSs. It is a temporary name assigned to the table or table column for the purpose of a particular SQL query. In addition, aliasing can be employed as an obfuscation technique to secure the real names of database fields. A table alias is also called a correlation name.
+
+An alias is represented explicitly by the AS keyword but in some cases, the same can be performed without it as well. Nevertheless, using the AS keyword is always a good practice.
+
+
+
+Between AND operator/ Not Between AND operator
+=================================================
+It is used to select a value which lies between the given range.
+[value between lowerlimit and upperlimit].
+
+Syntax
+--------
+SELECT ColumnName
+FROM tableName
+WHERE ColumnName BETWEEN lowerlimit AND higherlimit;
+
+
+Relational operators in SQL
+===============================
+< - less than
+> - greater than
+<= - less than or equal 
+>= - greater than or equal
+!= - not equal
+other symbols used are
+(not equal)[<>,^=]
+
+
+
+
+
+SELECT First_name, last_name
+FROM Employees
+
+WAQ to print/display firstname and lastname together
+
+|| operator
+SELECT first_name||last_name
+FROM Employees
+
+--Sachin Tendulkar
+SELECT first_name||' '||last_name AS FULLNAME
+FROM Employees
+
+--Sachin gets 24000 as salary
+--Vinod  gets 17000 as salary
+
+SELECT first_name||' gets '||  salary||' as salary'
+FROM EMployees
+
+--Sachin  Sachin@gmail.com
+--Vinod   Vinod@gmail.com
+
+SELECT first_name,first_name||'@gmail.com' AS "Mail ID"
+FROM EMployees
+
+
+SELECT first_name,first_name||'@gmail.com' AS MAIL_ID
+FROM EMployees
+
+
+SELECT first_name,first_name||'@gmail.com' AS MAILID
+FROM EMployees
+
+
+---------------------------------------
+RELATIONAL OPERATORS
+--------------------------------------
+
+=,>,<,<=,>= ,{Not equal to}!=, {Not equal to}<>,{Not equal to}^=
+
+SELECT 
+FROM 
+WHERE
+
+WAQ to print the rows from employees table for  all the employees whose salary is greater than 18500.
+SELECT *
+FROM Employees
+WHERE salary >18500
+
+WAQ to display the last_name, hire_date,job_id of all the employees whose salary is not equal to 24000.
+SELECT last_name, hire_date,job_id
+FROM Employees
+WHERE salary !=24000
+
+WAQ to display the rows from employees table for all the employees whose hire_date is 17-Aug-10
+SELECT *
+FROM Employees
+WHERE hire_date='17-Aug-10'
+------------------------------------------------------------------------------------
+BETWEEN AND operator
+
+WAQ to display the last naem ,salary from employees whose salary is in between the 24000 and 18000
+SELECT last_name,salary
+From EMployees
+WHERE salary BETWEEN 18000 AND 24000
+
+
+SELECT last_name,salary
+From EMployees
+WHERE salary >=18000 AND salary <=24000
+
+
+
+
+
