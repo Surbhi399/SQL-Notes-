@@ -1,0 +1,41 @@
+1. WAQ to display employee details whose first_name is Sachin or Vinod or Sushmitha.
+
+==>> select * from Employees where  first_name in('Sachin ', 'Vinod ', 'Sushmitha');
+
+2. WAQ to display details of employees hired after 1-Jan-11 and before 31-Dec-11.
+
+==>>  select * from Employees where   hire_date <= ('30-Dec-11') and (hire_date >= '2-Jan-11') ;
+==>> select * from Employees where hire_date between '2-Jan-11' and '30-Dec-11';
+
+3. WAQ to display details of employees not hired after 1-Jan-11 and before 31-Dec-11.
+
+==>>  select * from Employees where hire_date not  between '2-Jan-11' and '30-Dec-11';
+
+4. WAQ to display details of unique salaries.
+
+==>>select distinct salary  from Employees;
+
+5. WAQ to  selects all customers that are located in "Germany", "France" or "UK" from customer table.
+
+==>> select * from customer where country  in ( "Germany", "France" , "UK");
+
+6. WAQ to  selects all customers that are located not in "Germany", "France" or "UK" from customer table.
+
+==>>  select * from customer where country not in ( "Germany", "France" , "UK");
+
+7. WAQ to display customer_id whose card_id is CR001 and CR004 from customer_card_details table.
+
+==>> select  customer_id from customer_card_details where card_id = ' CR001 ' and card_id = ' CR004' ;
+
+8. WAQ to display movie_name whose movie_id is either MV001 or MV002 from movie table.
+
+==>> select movie_name from  movie where movie_id ='MV001' or movie_id = 'MV002' ;
+
+9. WAQ to display meter_id,fine_amount from Bill table if annual fine_amount is greater than 30000.
+
+==>>select meter_id,fine_amount  from  Bill where (fine_amount*12) >= 30000;
+
+10. WAQ to display the details of all the Bills where total_units is greater than 10000.
+
+==>>> select * from Bill where total_units > 10000;
+
