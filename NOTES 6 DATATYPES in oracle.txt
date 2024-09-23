@@ -1,0 +1,189 @@
+-Datatypes
+1)  Numeric datatype
+ 
+ a)  int : Integer is nothing but a whole number. 
+         It contains positive or negative number.
+     Example: 8888,-8888
+  
+  b) float(m,d) :float precision it takes upto 23size
+     m=precision(number of size)
+     d=scale(number of decimals)
+     Example: float(4,2)
+
+  c) double(m,d) :double precision it takes upto 24-53size
+       m=precision(number of size)
+     d=scale(number of decimals)
+     Example: double(4,2)
+
+
+2) String datatype :
+
+   a) char(size) : char size is 0-255
+                 : It is fixed size. We can use when we know currect size.
+                 : Example:name char(5)
+                 i)         D H R U V
+                            0 1 2 3 4
+
+                 ii)         R A M \0 \0            
+                             0 1 2 3  4 
+    here in ex ii) , 3 and 4 not used again which means memory is wasted in this case.
+
+   b)   varchar(size): varchar size is 0-255
+                     : It is variable(changable) size.
+                     : Example : name varchar(5)
+  			i)         D H R U V
+                      	           0 1 2 3 4
+
+                        ii)         R A M           
+                                    0 1 2 3  4 
+
+                        inserts next value in this .
+ 
+                        
+
+   Difference between varchar  and  varchar2
+------------------
+  varchar()                                                             
+---------------------
+i) Varchar is a data type that is used for variable-length character strings in other SQL implementations
+ii) Varchar is less efficient and flexible than Varchar2 as it allows for less efficient storage of strings.
+iii) VARCHAR can store up to 2000 bytes of data.
+iv) VARCHAR supports less features than VARCHAR2,
+
+VARCHAR is actually supported in Oracle SQL, but it is an older data type that has largely been replaced by VARCHAR2. 
+However, if you're working with an older database that uses VARCHAR, you can still use it in your SQL statements. Here's an example of how you might create a table with a VARCHAR column in Oracle SQL:
+
+
+CREATE TABLE my_table (
+  id NUMBER(6),
+  name VARCHAR(50),
+  description VARCHAR(200)
+);
+
+
+In this example, we're creating a table called "my_table" with three columns, including "name," which is defined as a VARCHAR data type with a maximum length of 50 characters. This means that any data stored in the "name" column will be stored as variable-length character strings with a maximum length of 50 characters.
+-----------------
+varchar2()
+----------------------
+i) Varchar2 is a data type in Oracle SQL that is used for variable-length character strings,
+ii)Varchar2 is more efficient and flexible than Varchar as it allows for more efficient storage of strings and better performance with character data.
+iii) It can store up to 4000 bytes of data.
+iv)VARCHAR2 supports more features than VARCHAR,
+   including support for national character sets, improved performance with character data, and better handling of trailing white spaces.
+
+
+Here's an example of how you might use VARCHAR2 in Oracle SQL:
+
+
+CREATE TABLE employees (
+  employee_id NUMBER(6),
+  first_name VARCHAR2(20),
+  last_name VARCHAR2(25),
+  email VARCHAR2(25),
+  phone_number VARCHAR2(20),
+  hire_date DATE,
+  job_id VARCHAR2(10),
+  salary NUMBER(8,2),
+  commission_pct NUMBER(2,2),
+  manager_id NUMBER(6),
+  department_id NUMBER(4)
+);
+
+
+In this example, we're creating a table called "employees" with several columns, including "first_name" and "last_name," both of which are defined as VARCHAR2 data types with a maximum length of 20 and 25 characters, respectively. This means that any data stored in these columns will be stored as variable-length character strings with a maximum length of 20 or 25 characters, respectively.
+
+NOTE 1: you can store more than 25 characters for last name by increasing the maximum length of the VARCHAR2 data type in the column definition. For example, you could change "last_name VARCHAR2(25)" to "last_name VARCHAR2(50)" to allow for last names up to 50 characters long. Just be aware that increasing the maximum length of a VARCHAR2 column will also increase the amount of storage space required for that column, so you should choose an appropriate length based on the expected length of the data you'll be storing.
+
+
+
+IMPORTANT NOTE: In Oracle SQL, it is recommended to use VARCHAR2 instead of VARCHAR, as VARCHAR2 is a more advanced data type. However, if you're working with an older database that uses VARCHAR, you can still use it in your SQL statements.
+
+
+
+3) DATE datatype:
+  Date format
+      
+    yyyy-mm-dd
+    yyyy/mm/dd
+
+Ex: '2020-02-07' 
+    Date should be specified within single quote.
+
+
+Oracle date format: 
+----------------------
+dd-mmm-yyyy
+Ex:07-Feb-2020
+mmm-allows only first 3 characters.
+
+
+Time format: 
+hh:mm:ss
+
+Date time format: 
+yyyy-mm--dd(space)
+hh:mm:ss
+
+year format: 
+yyyy
+
+
+
+
+an example of how to use the DATE data type in Oracle SQL:
+
+Suppose you want to create a table to store information about customer orders, including the order date. You can use the DATE data type to store the order date in the following way:
+
+CREATE TABLE orders (
+  order_id NUMBER,
+  order_date DATE,
+  customer_name VARCHAR2(50),
+  order_total NUMBER
+);
+
+In this example, the orders table has four columns: order_id, order_date, customer_name, and order_total. The order_date column is defined as a DATE data type, which will allow you to store the date and time that the order was placed.
+
+To insert data into the orders table, you can use an INSERT statement like this:
+
+INSERT INTO orders (order_id, order_date, customer_name, order_total)
+VALUES (1, '27-JUN-2023 12:30:00 PM', 'John Smith', 100.00);
+
+In this example, the order_date value is specified as a string in the format 'DD-MON-YYYY HH:MI:SS AM/PM'. This format is commonly used in Oracle SQL to represent dates and times. The order_date value is automatically converted to the DATE data type when it is inserted into the orders table.
+------------------------------------------------------------------------------------------------
+
+NOTE:
+Here is few more information on Date datatypes for such candidates who goes in deep on data engineer profile but for freshers
+into development and testing its optional
+---------------------------------------------------------------------------------------------------
+Oracle SQL provides a number of different data types for storing date and time data. Here are some of the most commonly used date and time data types in Oracle SQL:
+
+1. DATE: The DATE data type is used for storing dates and times in Oracle SQL. It can store dates ranging from January 1, 4712 BC to December 31, 9999 AD, with a precision of one second.
+
+2. TIMESTAMP: The TIMESTAMP data type is used for storing dates and times with greater precision than the DATE data type. It can store dates ranging from January 1, 4712 BC to December 31, 9999 AD, with a precision of up to nine decimal places.
+
+3. INTERVAL: The INTERVAL data type is used for storing time intervals, such as the difference between two dates or times. It can store intervals ranging from one second to one year.
+
+4. TIMESTAMP WITH TIME ZONE: The TIMESTAMP WITH TIME ZONE data type is used for storing dates and times with time zone information. It can store dates ranging from January 1, 4712 BC to December 31, 9999 AD, with a precision of up to nine decimal places, as well as time zone information.
+
+5. TIMESTAMP WITH LOCAL TIME ZONE: The TIMESTAMP WITH LOCAL TIME ZONE data type is similar to the TIMESTAMP WITH TIME ZONE data type, but it automatically converts the time zone information to the local time zone of the database server.
+
+These are just a few examples of the date and time data types available in Oracle SQL. Depending on your specific needs, there may be other data types that are more appropriate for storing date and time data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
