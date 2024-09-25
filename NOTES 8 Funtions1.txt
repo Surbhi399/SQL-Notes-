@@ -1,0 +1,116 @@
+------Functions In SQL----------------
+
+Single row functions.
+Multiple row functions.
+
+
+-------------------------------------
+Single row functions.
+
+Single-row functions return a single result row for every row of a queried table 
+
+
+
+
+
+
+
+
+
+
+
+
+WAQ to display the name 'Tendulkar' in UPPERCASE.
+SELECT UPPER('Tendulkar')
+FROM Dual
+
+WAQ to display the last_name in the employee table into the uppercase
+SELECT UPPER(last_name)
+FROM Employees
+
+
+SELECT LOWER(last_name)
+FROM Employees
+
+
+SELECT INITCAP('Sachin is a great batsman')
+FROM Dual
+
+
+WAQ to display last_name,salary  , where last_name is TENDULKAR
+SELECT last_name,salary
+FROM EMployees
+WHERE UPPER(last_name)= 'TENDULKAR'
+
+
+concat()
+SELECT concat('Sachin',' Kumar') 
+FROM dual
+
+
+SELECT concat(concat(first_name,'-'),last_name)
+FROM Employees
+
+WAQ to display all the first_name in the uppercase, last_name in the lowercase  and print them together as one column separated by  ':'
+  
+Select concat(concat(UPPER(first_name),':'),LOWER(Last_name)) AS "complete name"
+FROM Employees
+
+SELECT length('Sachin')
+From Dual
+
+WAQ to display the details of employees only if there salary is greater than 4 digits.
+SELECT *
+FROM Employees
+Where length(salary)>4
+
+
+WAQ to display the substring of the string 'Tendulkar' from 2nd position extract 5 chars.
+
+SELECT substr('Tendulkar',2,5)
+FROM dual
+
+WAQ to display the substring of the string 'oha' from 'RajaRamMohanRoy'.
+SELECT substr('RajaRamMohanRoy',9,3)
+FROM dual
+
+
+--R a j a  R  a  m  M  o  h  a  n  R  o  y
+                      -7          -3 -2 -1      
+ 
+SELECT substr('RajaRamMohanRoy',-7,3)
+FROM dual
+
+
+Important interview question.
+WAQ to obtain details of employees if their name starts with Vowels(AEIOU)
+
+
+Sachin
+S------A E I O U
+
+SELECT substr('Sachin',1,1)
+From dual
+
+SELECT substr(first_name,1,1) IN ('A','I','E','O','U') ----ERROR
+From Employees
+
+
+SELECT *
+FROM Employees
+WHERE substr(first_name,1,1) IN ('A','I','E','O','U') 
+
+
+WAQ to obtain details of employees if their name starts with Vowels(AEIOU)
+SELECT *
+FROM Employees
+WHERE substr(first_name,1,1) NOT IN ('A','I','E','O','U') 
+
+
+WAQ to obtain details of employees if their name starts with consonants
+SELECT *
+FROM Employees
+WHERE substr(first_name,1,1) NOT IN ('A','I','E','O','U') 
+
+
+
