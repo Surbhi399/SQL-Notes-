@@ -1,0 +1,121 @@
+class notes
+-------------------------------------------------------
+
+LIKE operator
+--------------
+It is used to search for a specified pattern in a column.
+
+% : 0 or more characters
+_ : matches exactly a character
+
+WAQ to retreieve the first_name, last_name , whose last_name starts with 'Ku';
+SELECT first_name,last_name
+FROM Employees
+WHERE last_name LIKE 'Ku%'
+
+SELECT first_name,last_name
+FROM Employees
+WHERE last_name LIKE 'ku%' ///NO data found because changing the cases.
+
+
+WAQ to retrieve the fn,ln whose ln last two characters are 'ms'
+SELECT first_name,last_name
+FROM Employees
+WHERE last_name LIKE '%ms'
+
+WAQ to retrieve such information whose last name 2nd character from begining is 'a'
+SELECT first_name,last_name
+FROM Employees
+WHERE last_name LIKE '_a%';
+
+
+WAQ to display first_name which consists of substring 'vin';
+SELECT first_name,last_name
+FROM Employees
+WHERE first_name LIKE '%vin%';
+
+
+
+DUAL table
+--------------------
+It is a speciall one row and one column table present by defualt in oracle and other database installations.
+
+
+WAQ  to concatinate sumathi with n 
+
+SELECT 'Sumathi'||' n' AS NAME
+FROM  DUAL
+
+
+
+1.Waq to retrieve the first_name and last_name whose last_name starts with ‘Ku’.
+
+2.Waq to retrieve the first_name and last_name whose last_name last two characters 
+are ‘ms’.
+
+3.Waq to display all the details of employees whose last_name contains the 
+SUBSTRING ‘as’.
+WHERE last_name LIKE '%as%' 
+
+4.display the first_name and last_name where last_name third character is ‘n’.
+WHERE last_name LIKE '__n%'
+
+5.Display the first_name,last_name where the first name's second and the last 
+character are ‘a’.
+WHERE first_name LIKE '_a%a'
+
+6. waq to select all names of employees which does not start with s.
+WHERE last_name NOT LIKE 's%'
+
+7.Waq to display details of all employees whose name has ‘r’ as 3rd character.
+WHERE name LIKE '__r%'
+
+8.Waq to display all the details of employees whose last_name contains the
+ SUBSTRING ‘mad’.
+
+9.Waq to display details of all employees whose salary is ending with 0.
+
+10. Display the emp details whose last_name contains 'a' in it.
+
+11.Display the emp details whose name contains character 't' in last but one position
+'%t_'
+
+12.Display the employee details whose job contains substring 'ing'
+
+13.Display the employee details whose salary is starting with 2
+
+14.Display the employee first name whose employee name starts with 'P' ends with 'r'
+
+15.Display employee name and salary only if they are earning 4 digits salary.
+WHERE salary LIKE '____'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
