@@ -1,0 +1,96 @@
+Clauses in SQL(Oracle)
+=====================
+1.The SELECT Clause/Statement
+The SELECT statement is used to select data from a database.
+syntax:
+SELECT column1, column2, ...
+FROM table_name;
+
+2.The  WHERE Clause
+The WHERE clause is used to filter records.
+It is used to extract only those records that fulfill a specified condition.
+syntax:
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+NOTE:The WHERE clause is not only used in SELECT statements, it is also used in UPDATE, DELETE, etc.
+
+3.The ORDER BY clause
+ORDER BY  is used to sort the set in ascending or descending order.
+ORDER BY  sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
+syntax:
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
+
+4.The GROUP BY 
+The GROUP BY  is often used with aggregate functions (COUNT(), MAX(), MIN(), SUM(), AVG()) to group the set by one or more columns.
+syntax:
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s);
+
+5.The HAVING clause was added to SQL because the WHERE clause cannot be used with aggregate functions.
+syntax:
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+
+
+
+Subqueries
+------------
+1. What is a subquery in Oracle?
+1. A subquery in Oracle is a query within a query. It is a SELECT statement that is embedded within another SELECT statement.
+
+2. What are the types of subqueries in Oracle?
+2. There are two types of subqueries in Oracle: single-row subqueries and multiple-row subqueries. A single-row subquery returns only one row, while a multiple-row subquery returns multiple rows.
+
+3. How do you write a subquery in Oracle?
+To write a subquery in Oracle, you simply place the SELECT statement within parentheses and use it as an expression in the WHERE clause.
+
+4. What is the syntax for a subquery in Oracle?
+The syntax for a subquery in Oracle is:
+
+
+SELECT column1, column2, ...
+FROM table1
+WHERE column_name operator (SELECT column_name FROM table_name WHERE condition);
+
+5. What is the maximum number of subqueries that can be nested in Oracle?
+ The maximum number of subqueries that can be nested in Oracle is 255.
+
+6. What is the difference between a subquery and a join in Oracle?
+The main difference between a subquery and a join in Oracle is that a subquery is a query within a query, while a join combines rows from two or more tables based on a related column between them.
+
+7. How do you use a subquery in a WHERE clause in Oracle?
+To use a subquery in a WHERE clause in Oracle, you simply place the SELECT statement within parentheses and use it as an expression in the WHERE clause.
+
+8. How do you use a subquery in a SELECT clause in Oracle?
+To use a subquery in a SELECT clause in Oracle, you can use it as a column expression, like this:
+
+
+SELECT column1, (SELECT column2 FROM table2 WHERE condition) AS column3
+FROM table1
+WHERE condition;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
