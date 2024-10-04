@@ -1,0 +1,149 @@
+Clauses
+======
+SELECT 
+WHERE
+ORDER BY
+
+
+WHERE 
+---------
+-row by row 
+-Used to check condition before grouping
+-cannot use multiple row functions
+
+
+
+Having
+---------
+-group by group
+-Used to check condition after grouping
+-can use multiple row functions
+
+
+-----------------------------------------------------------------------------
+
+Sub-queries
+Inner-queries
+Nested-queries
+
+
+WAQ to display the last_name,first_name and salary of all the employees who are earning more than 'Tendulkar'
+
+SELECT first_name,last_name,salary
+From Employees
+WHERE salary>(SELECT salary
+FROM EMployees
+WHERE last_name='Tendulkar')
+ 
+
+SELECT first_name,last_name,salary
+From Employees
+WHERE salary>(24000)
+
+
+
+SELECT *
+FROM Employees
+
+SELECT First_name
+From Employees
+ORDER BY first_name ;
+
+SELECT First_name
+From Employees
+ORDER BY first_name ASC;
+
+SELECT First_name
+From Employees
+ORDER BY first_name DESC;
+
+WAQ to print first_name in ascending order, last_name in the descending order.
+SELECT first_name,last_name
+FROM Employees
+ORDER BY first_name ASC,last_name DESC
+
+
+
+SELECT first_name,last_name
+FROM Employees
+ORDER BY last_name DESC,first_name ASC
+
+
+Select salary
+From Employees
+Where 
+
+
+
+SELECT max(salary),Department_id
+FROM Employees
+group by department_id
+
+WAQ to display AGE and least marks scored by the UNIQUE aged student from the table student.
+SELECT min(marks),age
+FROM Student
+group by age;
+
+SELECT
+FROM 
+WHERE
+GROUP BY
+HAVING
+ORDER BY
+
+
+WAQ to display age  and count of the age for all the students whose age is equal to 21 from the table.
+
+SELECT count(age),age
+FROM Student
+WHERE age=21
+GROUP BY age
+
+-----------------
+WAQ to print department_id who is getting highest salary which is greater than 30000, based on department_id
+SELECT max(salary),department_id
+FROM Employees
+group by department_id
+having max(SALARY)>30000
+
+
+SELECT first_name,last_name,salary
+From Employees
+WHERE salary>'Tendulkar'
+
+
+SELECT salary
+FROM EMployees
+WHERE last_name='Tendulkar'
+ 
+
+
+SELECT first_name,last_name,salary
+From Employees
+WHERE salary>(SELECT salary
+FROM EMployees
+WHERE last_name='Tendulkar')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
