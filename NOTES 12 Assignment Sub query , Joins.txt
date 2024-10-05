@@ -1,0 +1,110 @@
+1. WAQ to find count of first_names from Employees
+
+select count( first_name) from Employees;
+
+2. WAQ to fetch the first 50% record from a table Employees
+
+SELECT *
+FROM EMployees
+WHERE employee_id<=(SELECT count(*)/2 FROM Employees)
+
+3.WAQ to fetch the last record from the table Employees
+
+SELECT *
+FROM EMployees
+WHERE employee_id=(SELECT max(employee_id) FROM Employees)
+
+
+4. WAQ to display the dept_id,first_name and the job_id for all the employees who work in 
+IT_PROG
+
+select department_id,first_name , job_id from employees where job_id ='IT_PROG';
+
+
+5. WAQ to display first_name,salary,dept_no for those employees who earn such amount of  salary which is the smallest salary of all the department.
+
+select first_name,salary,department_id from employees where salary = (select  min(salary) from employees);
+
+
+6. You have two tables in an Oracle database: `employees` and `departments`. The `employees` table contains the following columns: `employee_id`, `first_name`, `last_name`, `email`, `hire_date`, `salary`, and `department_id`. The `departments` table contains the following columns: `department_id`, `department_name`, and `location`.
+
+Write a SQL query that returns the department name and the average salary of employees in that department.
+
+SELECT department_name,avg(salary) as "AVG_SALARY" FROM employees E full join
+departments D on  e.department_id = d.department_id group by department_name 
+
+select job_id , (salary/30) from employees;
+
+select avg(salary),job_id from employees group by job_id;
+
+Use a subquery to calculate the average salary for each department.
+Sort the results by average salary in descending order.
+Here's an example of the expected output:
+
+select job_id  as  "department_name", avg(salary) as "AVG_SALARY" from employees group by job_id order by  AVG_SALARY DESC; //(WORKING)
+
+SELECT department_name,avg(salary) as "AVG_SALARY" FROM employees E full join
+departments D on  e.department_id = d.department_id group by department_name order by  AVG_SALARY DESC; //(WORKING)
+
+
+department_name  avg_salary
+---------------  ----------
+Sales            75000
+Marketing        60000
+Accounting       55000
+
+
+7. You have two tables in an Oracle database: `orders` and `customers`. The `orders` table contains the following columns: `order_id`, `customer_id`, `order_date`, and `total_amount`. The `customers` table contains the following columns: `customer_id`, `first_name`, `last_name`, `email`, and `phone`.
+
+Write a SQL query that returns a list of all orders along with the first name, last name, and email of the customer who placed the order.
+
+SELECT first name, last name,  email FROM orders O  FULL JOIN customers C ON O.customer_id = C.customer_id where order_id  not null ;
+
+Sort the results by order date in descending order.
+
+SELECT first name, last name,  email FROM orders O  FULL JOIN customers C ON O.customer_id = C.customer_id where order_id  not null  order by order_date ;
+
+
+
+
+Use an INNER JOIN to join the two tables.
+
+SELECT * FROM orders O  INNER JOIN customers C ON O.customer_id = C.customer_id;
+
+Here's an example of the expected output:
+
+
+order_id  customer_id  order_date             total_amount  first_name  last_name   email
+--------  -----------  -------------------  ------------  ----------  ----------  --------------------
+1         1001         2021-01-01 00:00:00   100.00        John        Doe         john.doe@example.com
+2         1002         2021-01-02 00:00:00   200.00        Jane        Smith       jane.smith@example.com
+3         1003         2021-01-03 00:00:00   300.00        Bob         Johnson     bob.johnson@example.com
+ 
+
+
+8.Retrieve the names of all employees who work in the same department as the employee named John Smith.
+
+ SELECT concat(first_name, last_name),department_name FROM employees E full join
+departments D on  e.department_id = d.department_id order  by department_name;
+
+
+
+9. Retrieve the names of all departments that have more than 10 employees.
+
+select department_name from employees E full join
+departments D on  e.department_id = d.department_id group by department_name having count(employee_id) >10;
+
+10.Retrieve the names of all employees who earn more than rs50,000 per year
+
+select first_name , last_name from employees where (salary* 12 )> '50000';
+
+11.Retrieve the names of all employees who work in the department named 'Sales'
+
+select first_name , last_name from employees E full join
+departments D on  e.department_id = d.department_id where department_name = 'Sales';
+
+
+
+12.Retrieve the names of all employees who have a manager with the last name 'King'
+
+select first_name , last_name from employees where Department_id =(select department_id from employees where last_name ='King') and last_name != 'King';
