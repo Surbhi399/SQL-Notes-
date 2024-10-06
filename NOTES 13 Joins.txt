@@ -1,0 +1,97 @@
+SELECT *
+From Employees e
+Join Departments d
+On e.Department_id= d.department_id
+
+
+SELECT *
+From Employees e
+Join Departments d
+On e.Manager_id= d.Manager_id
+-----------------------------------------------------------------------------
+Natural Join :
+A NATURAL JOIN is a JOIN operation that creates an implicit join clause for you based on the common columns in the two tables being joined. Common columns are columns that have the same name in both tables.
+A NATURAL JOIN can be an INNER join, a LEFT OUTER join, or a RIGHT OUTER join. The default is INNER join.
+
+-No conditions required
+-common col will not be repeated.
+-by default ---->inner join
+
+Select *
+From Employees
+
+Select *
+From Departments
+
+Select *
+From JOB_grades
+
+SELECT *
+FROM EMployees 
+Natural INNER JOIN Departments
+
+ or
+
+SELECT *
+FROM EMployees 
+Natural  JOIN Departments
+
+
+SELECT *
+FROM EMployees 
+Natural  LEFT JOIN Departments
+
+SELECT *
+FROM EMployees 
+Natural  Right JOIN Departments
+
+
+SELECT *
+FROM EMployees 
+Natural  Full JOIN Departments
+-------------------------------
+SELF JOIN : A self join is a regular join, but the table is joined with itself.
+SELECT column_name(s)
+FROM table1 , table2
+WHERE condition;
+
+-------------------------------
+EMployees e1, Employees e2
+
+SELECT e1.employee_id,e2.first_name,e1.salary
+FROM Employees e1,Employees e2
+WHERE e1.salary<e2.salary
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+WAQ to display all the details of employees where dept_id in the employees table is equal to dept_id in the Departments table
+without using join
+
+SELECT *
+FROM Employees e1,Departments e2
+Where e1.Department_id=e2.Department_id
+
+----------------------------------------------------------------------------------------------------------------------------
+How to join 3 tables in sQL
+---------------------------------------------------------------------------------------------------------------------------
+Refer to the image shared 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
