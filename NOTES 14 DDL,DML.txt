@@ -1,0 +1,100 @@
+SQL Commands
+
+1. Data Definition Language (DDL)
+DDL changes the structure of the table like creating a table, deleting a table, altering a table, etc.
+All the command of DDL are auto-committed that means it permanently save all the changes in the database.
+
+CREATE
+ALTER
+DROP
+TRUNCATE
+are the commands of DDL
+
+2.Data Manipulation Language
+DML commands are used to modify the database. It is responsible for all form of changes in the database.
+The command of DML is not auto-committed that means it can't permanently save all the changes in the database. They can be rollback.
+
+INSERT
+UPDATE
+DELETE
+are the commands of DML
+
+
+Difference between Delete and Truncate
+==========================================================================================
+Delete                                           
+------------------------------------------------------------------------------
+-The DELETE command is used to delete specified rows(one or more).
+-It is a DML(Data Manipulation Language) command.
+-There may be a WHERE clause in the DELETE command in order to filter the records.
+-DELETE command is slower than TRUNCATE command.
+
+
+Truncate
+--------------------------------------------------------------------------------
+-While this command is used to delete all the rows from a table.
+-While it is a DDL(Data Definition Language) command.
+-While there may not be WHERE clause in the TRUNCATE command.
+-While the TRUNCATE command is faster than the DELETE command.
+
+
+
+
+class notes:::
+==========================================================================================
+CREATE table BJSHUBJUNE(id Number,name varchar2(5));
+desc BJSHUBJUNE
+
+DROP table BJSHUBJUNE
+DROP table Dual;
+ALTER table BJSHUBJUNE ADD(age number)
+
+ALTER table BJSHUBJUNE modify(age varchar2(8))
+Insert into BJSHUBJUNE values (1,'NAme','five')
+
+ALTER table BJSHUBJUNE modify(age Number)
+ALTER table BJSHUBJUNE RENAME Column age to NEWage
+
+
+ALTER TABLE BJSHUBJUNE RENAME TO JUNE
+DESC JUNE
+
+RENAME JUNE TO bjshub
+deSC BJSHUB
+
+
+truncate TABLE BJSHUB
+SELECT * FROM bjshub
+
+WAQ to update the value of course_fees FROM 6000 to 10000 
+where couse_faculty is 'Naveen' in the table COURSE
+
+UPDATE table_name SET col_name = update_value 
+
+UPDATE COURSE SET course_fees =10000
+WHERE couse_faculty='Naveen'
+
+---------------------------------------------------
+Delete : It is also used to remove one or more rows from a table.
+
+WAQ  to delete  all the rows from table course where the course is handled by 'Meenakshi'
+
+DELETE from table_name 
+WHERE col_name=value
+
+
+DELETE form course
+WHERE course_faculty='Meenakshi'
+
+-------------------------
+Delete from Course?
+ASSignment
+-------------------------
+DROP 
+------------------------
+Truncate
+
+
+
+
+
