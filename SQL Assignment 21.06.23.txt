@@ -1,0 +1,59 @@
+Assignment 2:
+===================
+
+execute the queries below and observe the output 
+i) if it is success then write the success msg below the insert statement.
+ii) if it is error then write the error msg and write the note on why error msg as occured.
+
+EXAMPLE:
+CREATE TABLE Atom
+(
+   ID int PRIMARY KEY,
+   name varchar2(20) NOT NULL,
+   age int CHECK(age>=18),
+   salary int,
+   isMarried varchar2(4) DEFAULT 'NO'
+);
+
+
+
+
+
+Q:insert into Atom values(1,'Roopa',22,30000,'Yes');
+A:Success
+
+Q:insert into Atom values(2,'Naveen',23,34566,'');
+A:Success
+
+insert into Atom values(3,'Suman',18,2344,'Yes');
+A:Success
+
+insert into Atom values(4,'Roopa',22.777,30000,'Yes');
+A:Success
+
+Q:insert into Atom values(5,Arthi,23,34566,'');
+A:Error "ORA-00984: column not allowed here". Name accepts string value so should be written inside quotations.
+
+Q:insert into Atom values(5,'Arthi',23,34566,'');
+A:Success
+
+insert into Atom values(6,'Suman',18,7654,'Yes');
+A:Success
+
+Q:insert into Atom values(6,'Suman',18,'Yes');
+A:Error "ORA-00947: not enough values". Salary value is missing.
+
+Q:insert into Atom values(7,'Shankar',24,40000,'');
+A:Success
+
+insert into Atom values(8,'Amrutha',24,40000,' ');
+A:Success
+
+Q:select * from atom;
+A:Success. With or without ; the code works.
+
+Q:drop table atom;
+A:Success
+
+
+
